@@ -1,4 +1,4 @@
-    #include <iostream>  
+#include <iostream>  
     using namespace std;  
     
     void kesimpulan() {
@@ -6,7 +6,7 @@
 	}
 	
 	void batasan() {
-		cout << "Anda dapat menghitung peluang dari pengambilan sampel tanpa pengembalian, tapi setiap nilai yang dimasukkan tidak boleh lebih dari 10"<<endl;
+		cout << "Anda dapat menghitung peluang dari pengambilan sampel tanpa pengembalian, tapi setiap nilai yang dimasukkan tidak boleh kurang dari 1"<<endl;
 		cout<<endl;
 	}
 	
@@ -14,15 +14,15 @@
     {  
     batasan();
     //untuk nilai awal
-       int x,k,nbesar,nkecil;
+       long long x,k,nbesar,nkecil;
     //untuk kepentingan menampung nilai
-       int i, kn = 1, xn = 1, nbn = 1, nkn = 1;
+       long long i, kn = 1, xn = 1, nbn = 1, nkn = 1;
     //untuk bagian atas sebagai yang dibagi 
     //nb = n besar, nk = n kecil.
-       int kminx, nbmink, nkminx,  nbminknkminx;
+       long long kminx, nbmink, nkminx,  nbminknkminx;
     //untuk bagian bawah sebagai pembagi
     //nb = n besar, nk = n kecil. 
-       int nbminnkz;
+       long long nbminnkz;
        
     //mulai memasukkan nilai argumen atau nilai awal
     cout<<"Masukkan jumlah populasi atau N (Misalnya 7) : ";
@@ -42,9 +42,9 @@
 	nbminnkz = nbesar - nkecil;
     
     //pemberitahuan mengenai nilai yang kemungkinan terlalu banyak sehingga terhitung secara tidak benar
-     if(x > 10 && k > 10 && nkecil > 10 && nbesar > 10){
+     if(x < 1 && k < 1 && nkecil < 1 && nbesar < 1){
      cout<<endl;
-     cout<<"Tidak dapat terdefinisikan karena batas nilai yang dapat dihitung hanya sampai  10, hasil di bawah mungkin salah atau tidak di sesuai"<<endl;
+     cout<<"Tidak dapat terdefinisikan karena nilai tidak sesuai"<<endl;
      cout<<endl;
  }
 
@@ -84,20 +84,20 @@
 	  
 	//catatan : ^ berarti berada di atas dan v artinya berada di bawah
 	//di (^k vn)!, kalikan x! dengan sisa bagi x untuk memenuhi nilai k tadi
-	 int kiri = kminxn * xn;
+	 long long kiri = kminxn * xn;
 	//di (^ N - K v n - x), kalikan hasil (n - x)! dengan sisa bagi (n - x)! untuk memenuhi sisa hasil (N - k)!
-	 int kanan = nkminxn * nbminknkminxn;
+	 long long kanan = nkminxn * nbminknkminxn;
 	//Ini bagian bawah, kalikan n! dengan sisa bagi n! untuk memenuhi Nilai N!
-	 int bawah = nbminnkzn * nkn;
+	 long long bawah = nbminnkzn * nkn;
 	 
-	 int hasilkiri = kn / kiri;
-	 int hasilkanan = nbminkn / kanan;
+	 long long hasilkiri = kn / kiri;
+	 long long hasilkanan = nbminkn / kanan;
 	 
 	 //kalikan keduanya dari yang telah dihasilkan di atas
-	 int totalatas = hasilkiri * hasilkanan;
+	 long long totalatas = hasilkiri * hasilkanan;
 	 
 	 //jumlahkan di bawah
-	 int totalbawah = nbn / bawah;
+	 long long totalbawah = nbn / bawah;
 	 
 	 double destotalatas = totalatas, destotalbawah = totalbawah;
 	 double destotalatasbawah = destotalatas / destotalbawah;
