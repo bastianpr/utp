@@ -96,7 +96,7 @@
 	long double destotalatasbawah = destotalatas / destotalbawah;
 	long double jawaban[1] = {destotalatasbawah};
 	 
-	 //pemberitahuan mengenai nilai yang kemungkinan terlalu banyak sehingga terhitung secara tidak benar
+	 //pemberitahuan mengenai nilai yang kemungkinan terlalu kecil sehingga terhitung secara tidak benar
      if(x < 1 && k < 1 && nkecil < 1 && nbesar < 1){
      cout<<endl;
      cout<<"Tidak dapat terdefinisikan karena nilai tidak sesuai"<<endl;
